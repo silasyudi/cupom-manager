@@ -1,4 +1,0 @@
-yudi/silas/service/TarefaServiceTest.java
- yudi.silas.service.TarefaServiceTest
-yudi/silas/service/ListaServiceTest.java
- yudi.silas.service.ListaServiceTest
