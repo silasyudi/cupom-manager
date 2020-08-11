@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ListaServiceTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ListaServiceTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/yudi.silas.service.html">yudi.silas.service</a> &gt; ListaServiceTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">6</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.127s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testAdicionaDuasListas()</td>
+<td class="success">0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testAdicionaLista()</td>
+<td class="success">0.018s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testAdicionaListaJaExistente()</td>
+<td class="success">0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDeleteLista()</td>
+<td class="success">0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetAll()</td>
+<td class="success">0.028s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUpdateLista()</td>
+<td class="success">0.021s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2020-08-10 22:18:54.782  INFO 7071 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [yudi.silas.service.ListaServiceTest], using SpringBootContextLoader
+2020-08-10 22:18:54.783  INFO 7071 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [yudi.silas.service.ListaServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-10 22:18:54.783  INFO 7071 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [yudi.silas.service.ListaServiceTest]: ListaServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-10 22:18:54.785  INFO 7071 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration yudi.silas.Application for test class yudi.silas.service.ListaServiceTest
+2020-08-10 22:18:54.787  INFO 7071 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-10 22:18:54.787  INFO 7071 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@48cfd135, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4a2adf42, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5154f943, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5f22a4c5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6952906d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@759e82ca, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@376f3db, org.springframework.test.context.event.EventPublishingTestExecutionListener@49387bfc, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@34145b4e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@351d17d4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@141d287, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@b2cbec8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1df45ac8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@408a4d15]
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into lista (nome, id) values (?, ?)
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select tarefa0_.id as id1_1_, tarefa0_.descricao as descrica2_1_, tarefa0_.finalizada as finaliza3_1_, tarefa0_.lista as lista4_1_, tarefa0_.nome as nome5_1_ from tarefa tarefa0_ where tarefa0_.lista=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: delete from lista where id=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into lista (nome, id) values (?, ?)
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select tarefa0_.id as id1_1_, tarefa0_.descricao as descrica2_1_, tarefa0_.finalizada as finaliza3_1_, tarefa0_.lista as lista4_1_, tarefa0_.nome as nome5_1_ from tarefa tarefa0_ where tarefa0_.lista=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: delete from lista where id=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into lista (nome, id) values (?, ?)
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select tarefa0_.id as id1_1_, tarefa0_.descricao as descrica2_1_, tarefa0_.finalizada as finaliza3_1_, tarefa0_.lista as lista4_1_, tarefa0_.nome as nome5_1_ from tarefa tarefa0_ where tarefa0_.lista=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: delete from lista where id=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into lista (nome, id) values (?, ?)
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: update lista set nome=? where id=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select tarefa0_.id as id1_1_, tarefa0_.descricao as descrica2_1_, tarefa0_.finalizada as finaliza3_1_, tarefa0_.lista as lista4_1_, tarefa0_.nome as nome5_1_ from tarefa tarefa0_ where tarefa0_.lista=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: delete from lista where id=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into lista (nome, id) values (?, ?)
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into lista (nome, id) values (?, ?)
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select tarefa0_.id as id1_1_, tarefa0_.descricao as descrica2_1_, tarefa0_.finalizada as finaliza3_1_, tarefa0_.lista as lista4_1_, tarefa0_.nome as nome5_1_ from tarefa tarefa0_ where tarefa0_.lista=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: delete from lista where id=?
+Hibernate: select tarefa0_.id as id1_1_, tarefa0_.descricao as descrica2_1_, tarefa0_.finalizada as finaliza3_1_, tarefa0_.lista as lista4_1_, tarefa0_.nome as nome5_1_ from tarefa tarefa0_ where tarefa0_.lista=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: delete from lista where id=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into lista (nome, id) values (?, ?)
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: update lista set nome=? where id=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into lista (nome, id) values (?, ?)
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_ where lista0_.nome=?
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select lista0_.id as id1_0_, lista0_.nome as nome2_0_ from lista lista0_
+Hibernate: select tarefa0_.id as id1_1_, tarefa0_.descricao as descrica2_1_, tarefa0_.finalizada as finaliza3_1_, tarefa0_.lista as lista4_1_, tarefa0_.nome as nome5_1_ from tarefa tarefa0_ where tarefa0_.lista=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: delete from lista where id=?
+Hibernate: select tarefa0_.id as id1_1_, tarefa0_.descricao as descrica2_1_, tarefa0_.finalizada as finaliza3_1_, tarefa0_.lista as lista4_1_, tarefa0_.nome as nome5_1_ from tarefa tarefa0_ where tarefa0_.lista=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: select lista0_.id as id1_0_0_, lista0_.nome as nome2_0_0_ from lista lista0_ where lista0_.id=?
+Hibernate: delete from lista where id=?
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.5</a> at 10 de ago de 2020 22:18:55</p>
+</div>
+</div>
+</body>
+</html>
