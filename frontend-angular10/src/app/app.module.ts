@@ -7,6 +7,8 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/template/header/header.component';
 import {CupomListComponent} from './components/cupom/cupom-list/cupom-list.component';
 import {CupomFormComponent} from './components/cupom/cupom-form/cupom-form.component';
+import {SimpleDialogComponent} from './components/template/simple-dialog/simple-dialog.component';
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
@@ -19,13 +21,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule} from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CupomListComponent,
-    CupomFormComponent
+    CupomFormComponent,
+    SimpleDialogComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -43,6 +47,7 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     MatButtonModule,
     MatSelectModule,
+    MatDialogModule,
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
