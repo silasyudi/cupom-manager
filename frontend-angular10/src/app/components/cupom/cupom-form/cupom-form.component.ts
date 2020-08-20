@@ -14,6 +14,7 @@ export class CupomFormComponent implements OnInit {
     id: null,
     codigo: '',
     descricao: '',
+    dataCadastro: null,
     dataExpiracao: null,
     dataUso: null,
     situacao: '',
@@ -30,7 +31,7 @@ export class CupomFormComponent implements OnInit {
     this.routerActive.paramMap.subscribe(
       params => {
         const id = +params.get('id');
-        
+
         if (id > 0) {
           this.searchCupomById(id);
         }
@@ -46,6 +47,8 @@ export class CupomFormComponent implements OnInit {
   }
 
   save(): void {
+    this.cupom.dataCadastro = new Date();
+
     this.cupomService
       .create(this.cupom)
       .subscribe(() => {

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Cupom} from '../cupom.model';
 import {CupomService} from '../cupom.service';
-import {NavigationExtras, Router} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cupom-list',
@@ -14,6 +14,7 @@ export class CupomListComponent implements OnInit {
   displayedColumns: string[] = [
     'codigo',
     'descricao',
+    'dataCadastro',
     'dataExpiracao',
     'dataUso',
     'situacao',
@@ -42,5 +43,9 @@ export class CupomListComponent implements OnInit {
 
   deletarCupom(id: number): void {
 
+  }
+
+  isExpirado(cupom: Cupom): boolean {
+    return cupom.situacao === 'EXPIRADO';
   }
 }

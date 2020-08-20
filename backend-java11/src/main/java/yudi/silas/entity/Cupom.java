@@ -26,6 +26,9 @@ public class Cupom {
     @NotBlank(message = "A descrição é obrigatória.")
     private String descricao;
 
+    @NotNull(message = "A data de cadastro é obrigatória.")
+    private Date dataCadastro;
+
     @NotNull(message = "A data de expiração é obrigatória.")
     private Date dataExpiracao;
 
@@ -58,6 +61,14 @@ public class Cupom {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     public Date getDataExpiracao() {

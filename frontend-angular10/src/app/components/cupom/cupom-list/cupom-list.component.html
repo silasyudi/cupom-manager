@@ -12,13 +12,18 @@
     <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="dataCadastro">
+    <th mat-header-cell *matHeaderCellDef>Cadastro</th>
+    <td mat-cell *matCellDef="let element"> {{element.dataCadastro | date:'dd/MM/yyyy'}} </td>
+  </ng-container>
+
   <ng-container matColumnDef="dataExpiracao">
-    <th mat-header-cell *matHeaderCellDef>Data Expiração</th>
+    <th mat-header-cell *matHeaderCellDef>Expiração</th>
     <td mat-cell *matCellDef="let element"> {{element.dataExpiracao | date:'dd/MM/yyyy'}} </td>
   </ng-container>
 
   <ng-container matColumnDef="dataUso">
-    <th mat-header-cell *matHeaderCellDef>Data Uso</th>
+    <th mat-header-cell *matHeaderCellDef>Uso</th>
     <td mat-cell *matCellDef="let element"> {{element.dataUso | date:'dd/MM/yyyy'}} </td>
   </ng-container>
 
@@ -30,7 +35,8 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef>Ações</th>
     <td mat-cell *matCellDef="let element">
-      <button mat-icon-button (click)="editarCupom(element)">
+      <button mat-icon-button (click)="editarCupom(element)"
+              [disabled]="isExpirado(element)">
         <mat-icon>edit</mat-icon>
       </button>
       <button mat-icon-button (click)="deletarCupom(element.id)">
@@ -40,7 +46,10 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr
+    mat-row *matRowDef="let row; columns: displayedColumns;"
+    [class.expirado]="isExpirado(row)"
+  ></tr>
 </table>
 
 <mat-toolbar *ngIf="!cupons || cupons.length === 0">

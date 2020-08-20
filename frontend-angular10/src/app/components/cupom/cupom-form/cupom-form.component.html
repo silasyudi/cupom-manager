@@ -7,6 +7,7 @@
     <mat-form-field>
       <input matInput [(ngModel)]="cupom.codigo"
              placeholder="Código" name="codigo"
+             (ngModelChange)="cupom.codigo = $event.toUpperCase()"
              required>
     </mat-form-field>
     <mat-form-field>
