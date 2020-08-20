@@ -1,0 +1,52 @@
+<table *ngIf="cupons?.length > 0"
+       mat-table [dataSource]="cupons"
+       class="table mat-elevation-z8">
+
+  <ng-container matColumnDef="codigo">
+    <th mat-header-cell *matHeaderCellDef>Código</th>
+    <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="descricao">
+    <th mat-header-cell *matHeaderCellDef>Descrição</th>
+    <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dataExpiracao">
+    <th mat-header-cell *matHeaderCellDef>Data Expiração</th>
+    <td mat-cell *matCellDef="let element"> {{element.dataExpiracao | date:'dd/MM/yyyy'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dataUso">
+    <th mat-header-cell *matHeaderCellDef>Data Uso</th>
+    <td mat-cell *matCellDef="let element"> {{element.dataUso | date:'dd/MM/yyyy'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="situacao">
+    <th mat-header-cell *matHeaderCellDef>Situação</th>
+    <td mat-cell *matCellDef="let element"> {{element.situacao}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Ações</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="editarCupom(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deletarCupom(element.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-toolbar *ngIf="!cupons || cupons.length === 0">
+  <p>Não há nenhum cupom cadastrado.</p>
+</mat-toolbar>
+
+<mat-toolbar>
+  <button mat-button (click)="adicionarCupom()">ADICIONAR CUPOM</button>
+</mat-toolbar>

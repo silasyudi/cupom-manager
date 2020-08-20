@@ -33,6 +33,7 @@ public class Cupom {
     private Date dataUso;
 
     @NotNull(message = "A situação é obrigatória.")
+    @Enumerated(EnumType.STRING)
     private Situacao situacao;
 
     public Integer getId() {
