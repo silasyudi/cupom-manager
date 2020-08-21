@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>
+  Pesquisa Avançada
+</h2>
+<form mat-dialog-content>
+  <h3>Intervalo de Datas</h3>
+  <div>
+    <mat-form-field>
+      <input matInput
+             [(ngModel)]="data.dataInicio"
+             placeholder="Data Inicial" name="dataInicial"
+             [matDatepicker]="pickerInicial"
+      >
+      <mat-datepicker-toggle matSuffix [for]="pickerInicial"></mat-datepicker-toggle>
+      <mat-datepicker #pickerInicial></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput
+             [(ngModel)]="data.dataFim"
+             placeholder="Data Final" name="dataFinal"
+             [matDatepicker]="pickerFinal"
+      >
+      <mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+      <mat-datepicker #pickerFinal></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <h3>Situação</h3>
+  <div>
+    <mat-form-field>
+      <mat-label>Situação</mat-label>
+      <mat-select
+        [(ngModel)]="data.situacao"
+        name="situacao"
+      >
+        <mat-option value="ATIVO">Ativo</mat-option>
+        <mat-option value="EXPIRADO">Expirado</mat-option>
+        <mat-option value="USADO">Usado</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <mat-dialog-actions>
+    <button mat-button color="primary"
+            [mat-dialog-close]="data">Pesquisar</button>
+  </mat-dialog-actions>
+</form>

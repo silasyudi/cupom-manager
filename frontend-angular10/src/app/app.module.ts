@@ -22,6 +22,8 @@ import {MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule} from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
+import { CupomSearchComponent } from './components/cupom/cupom-search/cupom-search.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -29,26 +31,28 @@ import {MatDialogModule} from '@angular/material/dialog';
     HeaderComponent,
     CupomListComponent,
     CupomFormComponent,
-    SimpleDialogComponent
+    SimpleDialogComponent,
+    CupomSearchComponent
   ],
-  imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatTableModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCardModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    FormsModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatDialogModule,
-  ],
+    imports: [
+        BrowserAnimationsModule,
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatTableModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatCardModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        FormsModule,
+        MatButtonModule,
+        MatSelectModule,
+        MatDialogModule,
+        MatChipsModule,
+    ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
   ],

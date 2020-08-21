@@ -4,6 +4,7 @@ import {CupomService} from '../cupom.service';
 import {Router} from '@angular/router';
 import {SimpleDialogComponent} from '../../template/simple-dialog/simple-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
+import {CupomSearchComponent} from '../cupom-search/cupom-search.component';
 
 @Component({
   selector: 'app-cupom-list',
@@ -22,6 +23,7 @@ export class CupomListComponent implements OnInit {
     'situacao',
     'actions',
   ];
+  searchs = [];
 
   constructor(
     private cupomService: CupomService,
@@ -34,6 +36,37 @@ export class CupomListComponent implements OnInit {
     this.cupomService.read().subscribe(cupons => {
       this.cupons = cupons;
     });
+  }
+
+  pesquisaAvancada(): void {
+    this.dialog.open(CupomSearchComponent)
+      .afterClosed()
+      .subscribe(data => {
+        this.search(data);
+      });
+  }
+
+  search(data: { situacao, dataInicio, dataFim }): void {
+    if (!this.isDatasValidas(data)) {
+      alert('A data inicial deve ser menor que a data final.');
+      return;
+    }
+
+    this.addSearch(data);
+
+    this.cupomService
+      .readAdvanced(data.situacao, data.dataInicio, data.dataFim)
+      .subscribe(cupons => {
+        this.cupons = cupons;
+      });
+  }
+
+  isDatasValidas(data: { situacao, dataInicio, dataFim }): boolean {
+    return !(
+      data.dataInicio != null
+      && data.dataFim != null
+      && data.dataInicio > data.dataFim
+    );
   }
 
   adicionarCupom(): void {
@@ -60,7 +93,6 @@ export class CupomListComponent implements OnInit {
   }
 
   executaRemocao(cupom: Cupom): void {
-    console.log(cupom);
     this.cupomService.delete(cupom.id).subscribe(() => {
       const index = this.cupons.indexOf(cupom);
       this.cupons.splice(index, 1);
@@ -69,5 +101,26 @@ export class CupomListComponent implements OnInit {
 
   isExpirado(cupom: Cupom): boolean {
     return cupom.situacao === 'EXPIRADO';
+  }
+
+  addSearch(data: { situacao, dataInicio, dataFim }): void {
+    this.searchs = [];
+
+    if (data.situacao) {
+      this.searchs.push('Situação: ' + data.situacao);
+    }
+
+    if (data.dataInicio) {
+      this.searchs.push('Data inicial: ' + data.dataInicio.toLocaleDateString());
+    }
+
+    if (data.dataFim) {
+      this.searchs.push('Data final: ' + data.dataFim.toLocaleDateString());
+    }
+  }
+
+  removeSearch(): void {
+    this.searchs = [];
+    this.ngOnInit();
   }
 }

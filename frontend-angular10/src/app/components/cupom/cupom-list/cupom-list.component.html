@@ -57,5 +57,24 @@
 </mat-toolbar>
 
 <mat-toolbar>
-  <button mat-button (click)="adicionarCupom()">ADICIONAR CUPOM</button>
+  <button mat-button (click)="adicionarCupom()">
+    <mat-icon>add</mat-icon>
+    <span>ADICIONAR CUPOM</span>
+  </button>
+  <button mat-button (click)="pesquisaAvancada()">
+    <mat-icon>search</mat-icon>
+    <span>PESQUISA AVANÇADA</span>
+  </button>
+
+  <mat-chip-list aria-label="Search">
+    <mat-chip
+      #chipList
+      [selectable]="true"
+      [removable]="true"
+      *ngFor="let search of searchs"
+      (removed)="removeSearch()">
+      {{ search }}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
 </mat-toolbar>

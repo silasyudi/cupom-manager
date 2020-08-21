@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {EMPTY, Observable} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {Cupom} from './cupom.model';
@@ -15,6 +15,24 @@ export class CupomService {
 
   create(cupom: Cupom): Observable<Cupom> {
     return this.http.post<Cupom>(this.baseUrl, cupom).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  readAdvanced(
+    situacao?: string,
+    dataInicio?: Date,
+    dataFim?: Date
+  ): Observable<Cupom[]> {
+    const url = `${this.baseUrl}/pesquisa-avancada`;
+
+    const params = new HttpParams()
+      .set('situacao', situacao ?? '')
+      .set('dataInicial', dataInicio?.toLocaleDateString() ?? '')
+      .set('dataFinal', dataFim?.toLocaleDateString() ?? '');
+
+    return this.http.get<Cupom[]>(url, {params}).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
@@ -51,7 +69,6 @@ export class CupomService {
   }
 
   errorHandler(e: any): Observable<any> {
-    console.log(e);
     const message = e?.error?.exception ?? 'Ocorreu um erro inexperado.';
     alert(message);
     return EMPTY;

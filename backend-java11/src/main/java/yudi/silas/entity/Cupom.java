@@ -8,7 +8,7 @@ import javax.validation.constraints.Pattern;
 import java.util.Date;
 import java.util.Objects;
 
-@Entity(name = "Lista")
+@Entity(name = "Cupom")
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"codigo"})})
 public class Cupom {
 

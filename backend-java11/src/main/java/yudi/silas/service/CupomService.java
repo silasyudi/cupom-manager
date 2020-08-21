@@ -3,9 +3,11 @@ package yudi.silas.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import yudi.silas.entity.Cupom;
+import yudi.silas.entity.Situacao;
 import yudi.silas.exception.CupomExisteException;
 import yudi.silas.repository.CupomRepository;
 
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -24,6 +26,10 @@ public class CupomService {
 
     public Optional<Cupom> readByCode(String codigo) {
         return cupomRepository.findByCodigo(codigo);
+    }
+
+    public Iterable<Cupom> readByParams(Situacao situacao, Date dataInicial, Date dataFinal) {
+        return cupomRepository.findBySituacaoAndIntervaloDataExpiracao(situacao, dataInicial, dataFinal);
     }
 
     public Cupom save(Cupom cupom) {
