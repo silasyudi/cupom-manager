@@ -37,6 +37,9 @@ public class CupomService {
             throw new CupomExisteException("Este código já está registrado. Por favor, informe outro.");
         }
 
+        SituacaoResolver resolver = new SituacaoResolver(cupom);
+        cupom.setSituacao(resolver.getSituacao());
+
         return cupomRepository.save(cupom);
     }
 

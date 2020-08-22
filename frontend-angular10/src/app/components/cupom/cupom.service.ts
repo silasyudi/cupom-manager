@@ -69,7 +69,6 @@ export class CupomService {
   }
 
   errorHandler(e: any): Observable<any> {
-    console.log(e);
     const message = e?.error?.exception ?? 'Ocorreu um erro inexperado.';
     alert(message);
     return EMPTY;

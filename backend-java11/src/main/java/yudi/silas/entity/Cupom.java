@@ -35,8 +35,6 @@ public class Cupom {
     @Min(value = 1, message = "O valor deve ser a partir de R$ 1,00.")
     private Float valor;
 
-    @NotNull(message = "A situação é obrigatória.")
-    @Enumerated(EnumType.STRING)
     private Situacao situacao;
 
     public Integer getId() {

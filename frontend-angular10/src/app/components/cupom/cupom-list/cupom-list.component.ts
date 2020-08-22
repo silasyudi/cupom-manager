@@ -94,10 +94,11 @@ export class CupomListComponent implements OnInit {
   }
 
   executaRemocao(cupom: Cupom): void {
-    this.cupomService.delete(cupom.id).subscribe(() => {
-      const index = this.cupons.indexOf(cupom);
-      this.cupons.splice(index, 1);
-    });
+    this.cupomService
+      .delete(cupom.id)
+      .subscribe(result => {
+        this.cupons = this.cupons.filter(item => item !== cupom);
+      });
   }
 
   isExpirado(cupom: Cupom): boolean {
