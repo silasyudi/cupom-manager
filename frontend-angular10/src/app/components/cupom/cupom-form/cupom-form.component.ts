@@ -17,6 +17,7 @@ export class CupomFormComponent implements OnInit {
     dataCadastro: null,
     dataExpiracao: null,
     dataUso: null,
+    valor: 0,
     situacao: '',
   };
 

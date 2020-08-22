@@ -1,10 +1,7 @@
 package yudi.silas.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 import java.util.Date;
 import java.util.Objects;
 
@@ -34,6 +31,9 @@ public class Cupom {
 
     @PastOrPresent(message = "A data de uso não pode ser uma data futura.")
     private Date dataUso;
+
+    @Min(value = 1, message = "O valor deve ser a partir de R$ 1,00.")
+    private Float valor;
 
     @NotNull(message = "A situação é obrigatória.")
     @Enumerated(EnumType.STRING)
@@ -85,6 +85,14 @@ public class Cupom {
 
     public void setDataUso(Date dataUso) {
         this.dataUso = dataUso;
+    }
+
+    public Float getValor() {
+        return valor;
+    }
+
+    public void setValor(Float valor) {
+        this.valor = valor;
     }
 
     public Situacao getSituacao() {

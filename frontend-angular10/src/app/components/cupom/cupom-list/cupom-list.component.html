@@ -27,6 +27,11 @@
     <td mat-cell *matCellDef="let element"> {{element.dataUso | date:'dd/MM/yyyy'}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="valor">
+    <th mat-header-cell *matHeaderCellDef>Valor</th>
+    <td mat-cell *matCellDef="let element">R$ {{ element.valor | number:'1.2' }} </td>
+  </ng-container>
+
   <ng-container matColumnDef="situacao">
     <th mat-header-cell *matHeaderCellDef>Situação</th>
     <td mat-cell *matCellDef="let element"> {{element.situacao}} </td>

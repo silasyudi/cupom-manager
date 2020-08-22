@@ -20,6 +20,7 @@ export class CupomListComponent implements OnInit {
     'dataCadastro',
     'dataExpiracao',
     'dataUso',
+    'valor',
     'situacao',
     'actions',
   ];
