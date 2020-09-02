@@ -18,7 +18,7 @@ public interface CupomRepository extends CrudRepository<Cupom, Integer> {
             "SELECT c FROM Cupom c "
                     + " WHERE (:situacao IS NULL OR c.situacao = :situacao) "
                     + " AND (:dataInicio IS NULL OR c.dataExpiracao >= :dataInicio) "
-                    + " AND (:dataFim IS NULL OR c.dataExpiracao >= :dataFim) "
+                    + " AND (:dataFim IS NULL OR c.dataExpiracao <= :dataFim) "
     )
     Iterable<Cupom> findBySituacaoAndIntervaloDataExpiracao(
             Situacao situacao,
